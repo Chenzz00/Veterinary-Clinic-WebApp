@@ -8,7 +8,8 @@
 <body>
     <h2>Create Your Account</h2>
 
-    <form>
+    <form action="{% url 'index' %}" method="post">
+        {% csrf_token %}
         <label for="fname">First Name:</label><br>
         <input type="text" id="fname" name="fname" placeholder="Enter your first name" required><br><br>
 
@@ -28,6 +29,7 @@
         <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm your password" required><br><br>
 
         <button type="submit">Create Account</button>
+
     </form>
 </body>
 </html>
